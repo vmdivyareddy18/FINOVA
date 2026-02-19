@@ -3,21 +3,19 @@
 
 <head>
     <title>Finova Dashboard</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style10.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
-
     <!-- Navbar -->
     <header class="navbar">
         <img src="img.png" alt="logo" class="logo">
 
         <nav>
             <a href="home.html">Home</a>
-            <a href="add/index.html">Dashboard</a>
-            <a href="EXPENSES/add-expense.html">Add Expense</a>
-            <a href="ai-assistant.html">AI Assistant</a>
+            <a href="index.html">Dashboard</a>
+            <a href="add-expense.html">Add Expense</a>
 
             <a href="login.html" class="login-btn">Login</a>
         </nav>
@@ -46,18 +44,7 @@
         </div>
     </div>
 
-    <!-- FINANCIAL HEALTH -->
-    <div class="health-summary">
-        <h3>Financial Health Summary</h3>
 
-        <div class="progress-container">
-            <div class="progress-bar" id="healthProgressBar">100%</div>
-        </div>
-
-        <p id="healthSummaryText">
-            Your spending is under control.
-        </p>
-    </div>
 
     <!-- CHARTS -->
     <div class="charts">
@@ -72,29 +59,7 @@
         </div>
     </div>
 
-    <!-- CHATBOT BUTTON -->
-    <div class="chatbot-toggle" onclick="toggleChat()">
-        💬
-    </div>
-
-    <!-- CHATBOT WINDOW -->
-    <div class="chatbot-container" id="chatbot">
-        <div class="chat-header">
-            <h4>Finova AI Assistant</h4>
-            <span onclick="toggleChat()">✖</span>
-        </div>
-
-        <div class="chat-body" id="chatBody"></div>
-
-        <div class="chat-footer">
-            <input type="text" id="userInput" placeholder="Ask about your expenses..." />
-            <button onclick="sendMessage()">Send</button>
-            <button onclick="startVoice()">🎤</button>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
-
+    <script src="script1.js"></script>
 </body>
 
 </html>

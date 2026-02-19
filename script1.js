@@ -60,7 +60,7 @@ function updateDashboard() {
 
     // Simple health score logic
     let score = total < 5000 ? 90 :
-                total < 10000 ? 70 : 50;
+        total < 10000 ? 70 : 50;
 
     document.getElementById("totalSpent").innerText = "₹" + total;
     document.getElementById("totalTransactions").innerText = transactions;
