@@ -10,8 +10,28 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to right, #010305, #050606);
+    background: linear-gradient(#001A33, );
 }
+
+body {
+    background: linear-gradient(to right, #010911, #030b13);
+}
+
+
+.logo {
+    width: 200px;
+    /* Logo size */
+    height: auto;
+    position: fixed;
+    /* Stay in corner */
+    top: 15px;
+    /* Distance from top */
+    left: 15px;
+    /* Distance from right */
+    z-index: 1000;
+    /* Always on top */
+}
+
 
 .container {
     background: white;
