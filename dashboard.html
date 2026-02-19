@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Finova Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Linking CSS File -->
+    <link rel="stylesheet" href="style2.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+    <script>
+        // Check if user is logged in
+        if (localStorage.getItem("isLoggedIn") !== "true") {
+            // Not logged in → go to login page
+            window.location.href = "login.html";
+        }
+    </script>
+
+
+    </header>
+
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <img src="img.png" alt="logo" class="logo">
+
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="add-expense.html">Add Expense</a>
+            <a href="ai-assistant.html">AI Assistant</a>
+
+            <a href="#" class="login-btn">Login</a>
+        </nav>
+    </header>
+
+
+
+    <!-- STAT CARDS -->
+    <div class="cards">
+        <div class="card">
+            <h4>Total Spent</h4>
+            <h2>$731</h2>
+        </div>
+
+        <div class="card">
+            <h4>Transactions</h4>
+            <h2>10</h2>
+        </div>
+
+        <div class="card">
+            <h4>Avg / Transaction</h4>
+            <h2>$73</h2>
+        </div>
+
+        <div class="card">
+            <h4>Health Score</h4>
+            <h2>59/100</h2>
+        </div>
+    </div>
+
+    <!-- HEALTH SCORE -->
+    <div class="health">
+        <h4>Financial Health Score</h4>
+        <div class="progress">
+            <div class="progress-bar"></div>
+        </div>
+        <p class="health-text">
+            Your financial health is Average. Consider reducing unnecessary spending.
+        </p>
+    </div>
+
+    <!-- CHARTS -->
+    <div class="charts">
+
+        <!-- PIE -->
+        <div class="chart-box">
+            <h4>Category Distribution</h4>
+            <div class="pie"></div>
+        </div>
+
+        <!-- BAR -->
+        <div class="chart-box">
+            <h4>Monthly Spending</h4>
+            <div class="bar-chart">
+                <div class="bar bar1"></div>
+                <div class="bar bar2"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- LINE CHART -->
+    <div class="chart-box trend-box">
+        <h4>Spending Trend</h4>
+        <div class="line-chart">
+            <svg viewBox="0 0 300 200">
+                <polyline fill="none" stroke="#2f6fed" stroke-width="3"
+                    points="0,120 40,150 80,40 120,160 160,130 200,170 240,60 280,100 300,140" />
+            </svg>
+        </div>
+    </div>
+
+</body>
+
+</html>
