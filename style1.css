@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f4f6f9;
+}
+
+/* Header */
+header {
+    background: #010a10;
+    color: white;
+    padding: 60px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 200px;
+    /* Logo size */
+    height: auto;
+    position: fixed;
+    /* Stay in corner */
+    top: 1px;
+    /* Distance from top */
+    left: 15px;
+    /* Distance from right */
+    z-index: 1000;
+    /* Always on top */
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 14px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Alert */
+.alert-bar {
+    background: #72d1fa;
+    color: #856404;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+}
+
+/* Login Section */
+.login-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 100px 40px;
+    flex-wrap: wrap;
+}
+
+.login-card {
+    background: rgb(252, 251, 251);
+    width: 750px;
+    padding: 140px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: 0.3s;
+}
+
+.login-card:hover {
+    transform: translateY(-5px);
+}
+
+.login-card h2 {
+    margin-bottom: 25px;
+    color: #0a3d62;
+}
+
+.login-card p {
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.login-card button {
+    background: #0a3d62;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.login-card button:hover {
+    background: #1e5f8a;
+}
+
+.card-links {
+    margin-top: 15px;
+}
+
+.card-links a {
+    display: block;
+    text-decoration: none;
+    font-size: 13px;
+    margin-top: 5px;
+    color: #007bff;
+}
+
+.card-links a:hover {
+    text-decoration: underline;
+}
+
+/* Quick Links */
+.quick-links {
+    text-align: center;
+    padding: 20px;
+    background: #eaf2f8;
+}
+
+.quick-links a {
+    margin: 10px 15px;
+    text-decoration: none;
+    font-size: 14px;
+    color: #0a3d62;
+}
+
+.quick-links a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #0a3d62;
+    color: white;
+    font-size: 13px;
+}

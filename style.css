@@ -10,13 +10,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(#001A33, );
+    background: linear-gradient(to right, #0b0c0d, #000404);
 }
-
-body {
-    background: linear-gradient(to right, #010911, #030b13);
-}
-
 
 .logo {
     width: 200px;
@@ -24,7 +19,7 @@ body {
     height: auto;
     position: fixed;
     /* Stay in corner */
-    top: 15px;
+    top: 1px;
     /* Distance from top */
     left: 15px;
     /* Distance from right */
@@ -32,29 +27,28 @@ body {
     /* Always on top */
 }
 
-
 .container {
     background: white;
-    padding: 40px;
-    width: 450px;
+    padding: 30px;
+    width: 500px;
     border-radius: 10px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
 .container h2 {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     color: #333;
 }
 
 .input-group {
-    margin-bottom: 25px;
+    margin-bottom: 15px;
 }
 
 .input-group label {
     display: block;
-    margin-bottom: 20px;
-    font-size: 20px;
+    margin-bottom: 5px;
+    font-size: 18px;
 }
 
 .input-group input {
@@ -67,12 +61,25 @@ body {
 button {
     width: 100%;
     padding: 10px;
-    background: #007BFF;
-    color: white;
+    background: #3ca2fc;
     border: none;
-    border-radius: 5px;
+    color: white;
     font-size: 18px;
+    border-radius: 5px;
     cursor: pointer;
 }
 
-/* ====== */
+button:hover {
+    background: #00c6ff;
+}
+
+.link {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.link a {
+    color: #4facfe;
+    text-decoration: none;
+}
