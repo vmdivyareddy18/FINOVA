@@ -33,7 +33,8 @@ function login() {
     let data = JSON.parse(user);
 
     if (data.password === password) {
-        alert("Login successful!");
+
+        localStorage.setItem("isLoggedIn", "true");
         window.location.href = "dashboard.html"; // create this next
     } else {
         alert("Incorrect password!");
