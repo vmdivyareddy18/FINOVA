@@ -1,67 +1,76 @@
-let expenses = JSON.parse(localStorage.getItem("expenses")) || [];
+let expenses = [];
+let categoryTotals = {
+    Food: 0,
+    Shopping: 0,
+    Bills: 0,
+    Transport: 0,
+    Health: 0,
+    Entertainment: 0
+};
+
+const pieCtx = document.getElementById('pieChart').getContext('2d');
+const barCtx = document.getElementById('barChart').getContext('2d');
+
+let pieChart = new Chart(pieCtx, {
+    type: 'pie',
+    data: {
+        labels: Object.keys(categoryTotals),
+        datasets: [{
+            data: Object.values(categoryTotals),
+            backgroundColor: [
+                '#3b82f6', '#10b981', '#f59e0b',
+                '#ef4444', '#8b5cf6', '#ec4899'
+            ]
+        }]
+    }
+});
+
+let barChart = new Chart(barCtx, {
+    type: 'bar',
+    data: {
+        labels: ['Total'],
+        datasets: [{
+            label: 'Monthly Spending',
+            data: [0],
+            backgroundColor: '#3b82f6'
+        }]
+    }
+});
 
 function addExpense() {
-
-    let amount = document.getElementById("amount").value;
+    let amount = parseFloat(document.getElementById("amount").value);
     let category = document.getElementById("category").value;
-    let date = document.getElementById("date").value;
-    let note = document.getElementById("note").value;
 
-    if (!amount || !category || !date) {
-        alert("Please fill all required fields");
+    if (isNaN(amount) || amount <= 0) {
+        alert("Enter valid amount");
         return;
     }
 
-    let expense = {
-        id: Date.now(),
-        amount: parseFloat(amount),
-        category: category,
-        date: date,
-        note: note
-    };
+    expenses.push(amount);
+    categoryTotals[category] += amount;
 
-    expenses.unshift(expense);
-    localStorage.setItem("expenses", JSON.stringify(expenses));
-
-    renderExpenses();
-    clearForm();
+    updateDashboard();
 }
 
-function renderExpenses() {
+function updateDashboard() {
 
-    let list = document.getElementById("expenseList");
-    list.innerHTML = "";
+    let total = expenses.reduce((a, b) => a + b, 0);
+    let transactions = expenses.length;
+    let avg = transactions > 0 ? (total / transactions).toFixed(2) : 0;
 
-    expenses.forEach(exp => {
+    // Simple health score logic
+    let score = total < 5000 ? 90 :
+                total < 10000 ? 70 : 50;
 
-        let item = document.createElement("div");
-        item.className = "expense-item";
+    document.getElementById("totalSpent").innerText = "₹" + total;
+    document.getElementById("totalTransactions").innerText = transactions;
+    document.getElementById("avgTransaction").innerText = "₹" + avg;
+    document.getElementById("healthScore").innerText = score;
 
-        item.innerHTML = `
-            <div>
-                <strong>₹${exp.amount} ${exp.category}</strong>
-                <div class="expense-details">
-                    ${exp.note || "No note"} • ${exp.date}
-                </div>
-            </div>
-            <button class="delete-btn" onclick="deleteExpense(${exp.id})">Delete</button>
-        `;
+    // Update charts
+    pieChart.data.datasets[0].data = Object.values(categoryTotals);
+    pieChart.update();
 
-        list.appendChild(item);
-    });
+    barChart.data.datasets[0].data = [total];
+    barChart.update();
 }
-
-function deleteExpense(id) {
-    expenses = expenses.filter(exp => exp.id !== id);
-    localStorage.setItem("expenses", JSON.stringify(expenses));
-    renderExpenses();
-}
-
-function clearForm() {
-    document.getElementById("amount").value = "";
-    document.getElementById("category").value = "";
-    document.getElementById("date").value = "";
-    document.getElementById("note").value = "";
-}
-
-renderExpenses();
