@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Finova Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <img src="img.png" alt="logo" class="logo">
+
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="add/index.html">Dashboard</a>
+            <a href="EXPENSES/add-expense.html">Add Expense</a>
+            <a href="ai-assistant.html">AI Assistant</a>
+
+            <a href="login.html" class="login-btn">Login</a>
+        </nav>
+    </header>
+
+    <!-- SUMMARY CARDS -->
+    <div class="cards">
+        <div class="card">
+            <h4>Total Spent</h4>
+            <p id="totalSpent">₹0</p>
+        </div>
+
+        <div class="card">
+            <h4>Transactions</h4>
+            <p id="totalTransactions">0</p>
+        </div>
+
+        <div class="card">
+            <h4>Avg / Transaction</h4>
+            <p id="avgTransaction">₹0</p>
+        </div>
+
+        <div class="card">
+            <h4>Health Score</h4>
+            <p id="healthScore">100</p>
+        </div>
+    </div>
+
+    <!-- FINANCIAL HEALTH -->
+    <div class="health-summary">
+        <h3>Financial Health Summary</h3>
+
+        <div class="progress-container">
+            <div class="progress-bar" id="healthProgressBar">100%</div>
+        </div>
+
+        <p id="healthSummaryText">
+            Your spending is under control.
+        </p>
+    </div>
+
+    <!-- CHARTS -->
+    <div class="charts">
+        <div class="chart-box">
+            <h3>Category Distribution</h3>
+            <canvas id="pieChart"></canvas>
+        </div>
+
+        <div class="chart-box">
+            <h3>Monthly Spending</h3>
+            <canvas id="barChart"></canvas>
+        </div>
+    </div>
+
+    <!-- CHATBOT BUTTON -->
+    <div class="chatbot-toggle" onclick="toggleChat()">
+        💬
+    </div>
+
+    <!-- CHATBOT WINDOW -->
+    <div class="chatbot-container" id="chatbot">
+        <div class="chat-header">
+            <h4>Finova AI Assistant</h4>
+            <span onclick="toggleChat()">✖</span>
+        </div>
+
+        <div class="chat-body" id="chatBody"></div>
+
+        <div class="chat-footer">
+            <input type="text" id="userInput" placeholder="Ask about your expenses..." />
+            <button onclick="sendMessage()">Send</button>
+            <button onclick="startVoice()">🎤</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

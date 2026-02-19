@@ -1,0 +1,231 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f7fc;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar */
+
+
+
+.navbar {
+    height: 70px;
+    background: black;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    /* move menu to right */
+    padding: 0 40px;
+}
+
+.logo {
+    width: 200px;
+    /* Logo size */
+    height: auto;
+    position: fixed;
+    /* Stay in corner */
+    top: -25px;
+    /* Distance from top */
+    left: 05px;
+    /* Distance from right */
+    z-index: 1000;
+    /* Always on top */
+}
+
+.navbar nav a {
+    text-decoration: none;
+    margin: 0 15px;
+    color: #f3d1d1;
+    font-weight: 500;
+}
+
+.login-btn {
+    padding: 7px 15px;
+    border: none;
+    background: #2563eb;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Hero Section */
+
+
+
+
+.nav-btn {
+    background: white;
+    color: #2563eb;
+    padding: 8px 15px;
+    margin-left: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* CARDS */
+.cards {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    width: 22%;
+    min-width: 200px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card p {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* HEALTH SUMMARY */
+.health-summary {
+    background: white;
+    margin: 20px;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.progress-container {
+    width: 100%;
+    background-color: #e5e7eb;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 15px 0;
+    height: 25px;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    line-height: 25px;
+    color: white;
+    font-weight: bold;
+    border-radius: 20px;
+    transition: width 0.6s ease-in-out, background-color 0.6s ease;
+}
+
+/* CHARTS */
+.charts {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+    flex-wrap: wrap;
+}
+
+.chart-box {
+    background: white;
+    padding: 20px;
+    width: 45%;
+    min-width: 300px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* CHATBOT BUTTON */
+.chatbot-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #2563eb;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* CHATBOT WINDOW */
+.chatbot-container {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 340px;
+    height: 480px;
+    background: white;
+    border-radius: 15px;
+    display: none;
+    flex-direction: column;
+    box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+}
+
+.chat-header {
+    background: #2563eb;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-body {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    background: #f9fafb;
+}
+
+.chat-footer {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+}
+
+.chat-footer input {
+    flex: 1;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.chat-footer button {
+    margin-left: 5px;
+    padding: 8px 10px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* CHAT MESSAGES */
+.user-message {
+    background: #2563eb;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 12px;
+    margin: 5px 0;
+    align-self: flex-end;
+    max-width: 80%;
+}
+
+.bot-message {
+    background: #e5e7eb;
+    padding: 8px 12px;
+    border-radius: 12px;
+    margin: 5px 0;
+    max-width: 80%;
+}
