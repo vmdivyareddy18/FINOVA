@@ -1,10 +1,3 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background-color: #f4f7fc;
-}
-
-
 * {
     margin: 0;
     padding: 0;
@@ -12,135 +5,81 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/* Navbar */
+body {
+    background-color: #f4f7fc;
+}
 
-
+/* ================= NAVBAR ================= */
 
 .navbar {
     height: 70px;
     background: black;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    /* move menu to right */
+    justify-content: space-between;
+    /* FIXED */
     padding: 0 40px;
 }
 
 .logo {
-    width: 200px;
-    /* Logo size */
+    width: 160px;
     height: auto;
-    position: fixed;
-    /* Stay in corner */
-    top: 1px;
-    /* Distance from top */
-    left: 15px;
-    /* Distance from right */
-    z-index: 1000;
-    /* Always on top */
 }
 
+.navbar nav {
+    display: flex;
+    align-items: center;
+}
 
 .navbar nav a {
     text-decoration: none;
-    margin: 0 15px;
+    margin-left: 20px;
     color: #f3d1d1;
     font-weight: 500;
 }
 
 .login-btn {
     padding: 7px 15px;
-    border: none;
     background: #2563eb;
     color: white;
     border-radius: 5px;
-    cursor: pointer;
 }
 
-/* Hero Section */
+/* ================= CARDS ================= */
 
-.hero {
-    min-height: 90vh;
-    background: linear-gradient(to right, #adbbdb, #c1cce9, #2563eb);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 40px;
-    color: white;
-}
-
-.hero-content {
-    max-width: 800px;
-}
-
-/* Tag */
-
-.tag {
-    background: rgba(255, 255, 255, 0.15);
-    padding: 8px 15px;
-    border-radius: 20px;
-    display: inline-block;
-    margin-bottom: 20px;
-    font-size: 14px;
-}
-
-/* Cards */
 .cards {
     display: flex;
     justify-content: space-around;
-    margin: 20px;
+    margin: 30px 20px;
 }
 
 .card {
     background: white;
-    padding: 10px;
-    width: 20%;
+    padding: 20px;
+    width: 22%;
     text-align: center;
-    border-radius: 10px;
-    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .card p {
-    font-size: 20px;
+    font-size: 22px;
     font-weight: bold;
+    margin-top: 8px;
 }
 
-/* Form */
-.form-container {
-    background: white;
-    margin: 20px;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-}
+/* ================= CHARTS ================= */
 
-.form-container input,
-.form-container select {
-    padding: 8px;
-    margin: 10px;
-}
-
-.form-container button {
-    padding: 8px 15px;
-    background: #2563eb;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-/* Charts */
 .charts {
     display: flex;
     justify-content: space-around;
-    margin: 20px;
+    margin: 30px 20px;
 }
 
 .chart-box {
     background: white;
-    padding: 20px;
+    padding: 25px;
     width: 45%;
-    border-radius: 10px;
-    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }

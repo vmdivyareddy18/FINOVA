@@ -19,13 +19,14 @@ body {
     height: auto;
     position: fixed;
     /* Stay in corner */
-    top: 1px;
+    top: -25px;
     /* Distance from top */
-    left: 15px;
+    left: 05px;
     /* Distance from right */
     z-index: 1000;
     /* Always on top */
 }
+
 
 .container {
     background: white;

@@ -3,11 +3,15 @@
 
 <head>
     <title>Finova Dashboard</title>
+
     <link rel="stylesheet" href="style10.css">
+
+    <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
+
     <!-- Navbar -->
     <header class="navbar">
         <img src="img.png" alt="logo" class="logo">
@@ -16,13 +20,14 @@
             <a href="home.html">Home</a>
             <a href="index.html">Dashboard</a>
             <a href="add-expense.html">Add Expense</a>
-
             <a href="login.html" class="login-btn">Login</a>
         </nav>
     </header>
 
+
     <!-- SUMMARY CARDS -->
     <div class="cards">
+
         <div class="card">
             <h4>Total Spent</h4>
             <p id="totalSpent">₹0</p>
@@ -42,12 +47,13 @@
             <h4>Health Score</h4>
             <p id="healthScore">100</p>
         </div>
-    </div>
 
+    </div>
 
 
     <!-- CHARTS -->
     <div class="charts">
+
         <div class="chart-box">
             <h3>Category Distribution</h3>
             <canvas id="pieChart"></canvas>
@@ -57,9 +63,13 @@
             <h3>Monthly Spending</h3>
             <canvas id="barChart"></canvas>
         </div>
+
     </div>
 
+
+    <!-- Dashboard Logic -->
     <script src="script1.js"></script>
+
 </body>
 
 </html>

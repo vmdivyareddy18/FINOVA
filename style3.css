@@ -136,3 +136,71 @@
     background: white;
     color: #1e3a8a;
 }
+
+/* Profile Icon */
+
+.profile-box {
+    cursor: pointer;
+    margin-left: 15px;
+}
+
+.profile-pic {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+/* Profile Panel */
+
+.profile-panel {
+    position: fixed;
+    top: -400px;
+    right: 20px;
+    width: 260px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+    transition: 0.4s ease;
+    z-index: 2000;
+}
+
+.profile-panel.active {
+    top: 85px;
+}
+
+.profile-panel h3 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.profile-img-box {
+    text-align: center;
+}
+
+.profile-img-box img {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.profile-img-box input {
+    width: 100%;
+}
+
+.profile-panel button {
+    width: 100%;
+    padding: 9px;
+    margin-top: 10px;
+    border: none;
+    background: #2563eb;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.logout-btn {
+    background: #dc2626 !important;
+}
