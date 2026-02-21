@@ -33,18 +33,29 @@
     /* Always on top */
 }
 
-.navbar nav a {
-    text-decoration: none;
-    margin: 0 15px;
-    color: #f3d1d1;
-    font-weight: 500;
-}
+
+    {}
 
 .login-btn {
     padding: 7px 15px;
+    border: none;
     background: #2563eb;
     color: white;
     border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Hero Section */
+
+.hero {
+    min-height: 90vh;
+    background: linear-gradient(to right, #adbbdb, #aabff6, #2563eb);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px;
+    color: white;
 }
 
 /* ================= CARDS ================= */
