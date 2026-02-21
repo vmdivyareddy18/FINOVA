@@ -5,11 +5,9 @@
     font-family: Arial, sans-serif;
 }
 
-body {
-    background-color: #f4f7fc;
-}
+/* Navbar */
 
-/* ================= NAVBAR ================= */
+
 
 .navbar {
     height: 70px;
@@ -20,7 +18,6 @@ body {
     /* move menu to right */
     padding: 0 40px;
 }
-
 
 .logo {
     width: 200px;
@@ -36,12 +33,9 @@ body {
     /* Always on top */
 }
 
-
-
-
 .navbar nav a {
     text-decoration: none;
-    margin-left: 20px;
+    margin: 0 15px;
     color: #f3d1d1;
     font-weight: 500;
 }
