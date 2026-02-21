@@ -72,27 +72,24 @@
             <canvas id="barChart"></canvas>
         </div>
     </div>
-    <!-- CHATBOT BUTTON right-->
-    <div class="chatbot-toggle" onclick="toggleChat()">
-        <span>💬</span>
-        <span>Chat with us!</span>
-    </div>
+    <div id="chatbot-btn">💬</div>
 
-    <!-- CHATBOT WINDOW -->
-    <div class="chatbot-container" id="chatbot">
-        <div class="chat-header">
-            <h4>Finova AI Assistant</h4>
-            <span onclick="toggleChat()">✖</span>
+    <div id="chatbox">
+        <div id="chat-header">
+            Finova AI
+            <span id="close-chat">✖</span>
         </div>
 
-        <div class="chat-body" id="chatBody"></div>
+        <div id="chat-body"></div>
 
-        <div class="chat-footer">
-            <input type="text" id="userInput" placeholder="Ask about your expenses..." />
-            <button onclick="sendMessage()">Send</button>
+        <div id="chat-input">
+            <input type="text" id="userInput" />
+            <button onclick="sendMsg()">Send</button>
             <button onclick="startVoice()">🎤</button>
         </div>
     </div>
+    <!-- Chatbot Button -->
+    <div id="chatbot-btn">💬</div>
 
 
     <script src="script1.js"></script>
