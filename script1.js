@@ -127,3 +127,111 @@ function updateDashboard() {
 // ===============================
 
 updateDashboard();
+localStorage.setItem("expenses", JSON.stringify(expenses));
+// ==========================
+// CHATBOT
+// ==========================
+
+function toggleChat() {
+    const chatbot = document.getElementById("chatbot");
+    chatbot.style.display = chatbot.style.display === "flex" ? "none" : "flex";
+    chatbot.style.flexDirection = "column";
+}
+
+function addMessage(message, className) {
+    const chatBody = document.getElementById("chatBody");
+    const msgDiv = document.createElement("div");
+    msgDiv.className = className;
+    msgDiv.innerText = message;
+    chatBody.appendChild(msgDiv);
+    chatBody.scrollTop = chatBody.scrollHeight;
+}
+
+function sendMessage() {
+
+    const input = document.getElementById("userInput");
+    const originalMessage = input.value;
+    const message = originalMessage.toLowerCase();
+
+    if (!message) return;
+
+    addMessage(originalMessage, "user-message");
+    input.value = "";
+
+    setTimeout(() => {
+
+        let total = parseFloat(document.getElementById("totalSpent").innerText.replace("₹", ""));
+        let transactions = parseInt(document.getElementById("totalTransactions").innerText);
+        let score = parseInt(document.getElementById("healthScore").innerText);
+
+        let reply = "I am here to help you manage your finances better.";
+
+        if (message.includes("health")) {
+            reply = `Your health score is ${score}%. `;
+            if (score >= 85)
+                reply += "Excellent control over finances!";
+            else if (score >= 60)
+                reply += "Stable but needs improvement.";
+            else
+                reply += "High risk spending detected.";
+        }
+        else if (message.includes("spending") || message.includes("expense")) {
+            reply = `Total spending is ₹${total}.`;
+        }
+        else if (message.includes("transaction")) {
+            reply = `You have ${transactions} transactions.`;
+        }
+        else if (message.includes("save")) {
+            reply = "Follow 50-30-20 rule and avoid impulse purchases.";
+        }
+        else if (message.includes("budget")) {
+            reply = "Create monthly budget and track daily expenses.";
+        }
+
+        let abnormal = detectAbnormal(total);
+        if (abnormal)
+            reply += "\n\n" + abnormal;
+
+        addMessage(reply, "bot-message");
+
+    }, 500);
+}
+
+// ==========================
+// VOICE INPUT
+// ==========================
+
+function startVoice() {
+
+    if (!('webkitSpeechRecognition' in window)) {
+        alert("Use Google Chrome for voice support.");
+        return;
+    }
+
+    const recognition = new webkitSpeechRecognition();
+    recognition.lang = "en-IN";
+    recognition.start();
+
+    recognition.onresult = function (event) {
+        const transcript = event.results[0][0].transcript;
+        document.getElementById("userInput").value = transcript;
+    };
+}
+// ==========================
+// ABNORMAL DETECTION
+//==========================
+
+function detectAbnormal(amount) {
+
+    let avg = expenses.length > 0 ? expenses.reduce((a, b) => a + b, 0) / expenses.length : 0;
+
+    if (amount > avg * 2 && avg !== 0) {
+        return "⚠️ This expense is unusually high compared to your average spending.";
+    }
+
+    if (amount > 10000) {
+        return "🚨 High value transaction detected.";
+    }
+
+    return null;
+}

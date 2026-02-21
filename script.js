@@ -39,4 +39,10 @@ function login() {
     } else {
         alert("Incorrect password!");
     }
+    // After successful login
+    localStorage.setItem("isLoggedIn", "true");
+    localStorage.setItem("userEmail", email); // optional
+
+    // Redirect to dashboard
+    window.location.href = "dashboard.html";
 }

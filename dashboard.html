@@ -3,31 +3,25 @@
 
 <head>
     <title>Finova Dashboard</title>
-
     <link rel="stylesheet" href="style10.css">
-
-    <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
 
-    <!-- Navbar -->
-    <header class="navbar">
+    <!-- NAVBAR -->
+    <div class="navbar">
         <img src="img.png" alt="logo" class="logo">
 
-        <nav>
+        <div>
             <a href="home.html">Home</a>
             <a href="index.html">Dashboard</a>
             <a href="add-expense.html">Add Expense</a>
-            <a href="login.html" class="login-btn">Login</a>
-        </nav>
-    </header>
-
+        </div>
+    </div>
 
     <!-- SUMMARY CARDS -->
     <div class="cards">
-
         <div class="card">
             <h4>Total Spent</h4>
             <p id="totalSpent">₹0</p>
@@ -47,13 +41,27 @@
             <h4>Health Score</h4>
             <p id="healthScore">100</p>
         </div>
-
     </div>
+
+
+
+    <!-- FINANCIAL HEALTH -->
+    <div class="health-summary">
+        <h3>Financial Health Summary</h3>
+
+        <div class="progress-container">
+            <div class="progress-bar" id="healthProgressBar">100%</div>
+        </div>
+
+        <p id="healthSummaryText">
+            Your spending is under control.
+        </p>
+    </div>
+
 
 
     <!-- CHARTS -->
     <div class="charts">
-
         <div class="chart-box">
             <h3>Category Distribution</h3>
             <canvas id="pieChart"></canvas>
@@ -63,13 +71,31 @@
             <h3>Monthly Spending</h3>
             <canvas id="barChart"></canvas>
         </div>
+    </div>
+    <!-- CHATBOT BUTTON right-->
+    <div class="chatbot-toggle" onclick="toggleChat()">
+        <span>💬</span>
+        <span>Chat with us!</span>
+    </div>
 
+    <!-- CHATBOT WINDOW -->
+    <div class="chatbot-container" id="chatbot">
+        <div class="chat-header">
+            <h4>Finova AI Assistant</h4>
+            <span onclick="toggleChat()">✖</span>
+        </div>
+
+        <div class="chat-body" id="chatBody"></div>
+
+        <div class="chat-footer">
+            <input type="text" id="userInput" placeholder="Ask about your expenses..." />
+            <button onclick="sendMessage()">Send</button>
+            <button onclick="startVoice()">🎤</button>
+        </div>
     </div>
 
 
-    <!-- Dashboard Logic -->
     <script src="script1.js"></script>
-
 </body>
 
 </html>

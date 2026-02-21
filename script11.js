@@ -249,7 +249,7 @@ function startVoice() {
     recognition.lang = "en-IN";
     recognition.start();
 
-    recognition.onresult = function(event) {
+    recognition.onresult = function (event) {
         const transcript = event.results[0][0].transcript;
         document.getElementById("userInput").value = transcript;
     };

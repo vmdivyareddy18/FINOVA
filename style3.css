@@ -54,7 +54,7 @@
 
 .hero {
     min-height: 90vh;
-    background: linear-gradient(to right, #adbbdb, #c1cce9, #2563eb);
+    background: linear-gradient(to right, #adbbdb, #aabff6, #2563eb);
     display: flex;
     align-items: center;
     justify-content: center;
