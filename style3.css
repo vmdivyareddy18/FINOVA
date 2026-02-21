@@ -49,6 +49,27 @@
     cursor: pointer;
 }
 
+.cards {
+    display: flex;
+    justify-content: space-around;
+    margin: 30px 20px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    width: 22%;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.card p {
+    font-size: 92px;
+    font-weight: bold;
+    margin-top: 8px;
+}
+
 /* Hero Section */
 
 .hero {
@@ -59,7 +80,7 @@
     justify-content: center;
     text-align: center;
     padding: 40px;
-    color: white;
+    color: rgb(237, 234, 234);
 }
 
 .hero-content {
@@ -69,7 +90,7 @@
 /* Tag */
 
 .tag {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(15, 5, 5, 0.15);
     padding: 8px 15px;
     border-radius: 20px;
     display: inline-block;
@@ -80,7 +101,7 @@
 /* Heading */
 
 .hero h1 {
-    font-size: 52px;
+    font-size: 82px;
     line-height: 1.2;
     margin-bottom: 20px;
 }
@@ -118,7 +139,7 @@
 .secondary-btn {
     padding: 12px 25px;
     background: transparent;
-    border: 2px solid white;
+    border: 2px solid rgb(239, 230, 230);
     color: white;
     border-radius: 8px;
     font-size: 16px;
@@ -132,7 +153,7 @@
 }
 
 .secondary-btn:hover {
-    background: white;
+    background: rgb(245, 242, 242);
     color: #1e3a8a;
 }
 

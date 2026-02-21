@@ -33,8 +33,12 @@
     /* Always on top */
 }
 
-
-
+.navbar nav a {
+    text-decoration: none;
+    margin: 0 15px;
+    color: #f3d1d1;
+    font-weight: 500;
+}
 
 .login-btn {
     padding: 7px 15px;
@@ -44,6 +48,29 @@
     border-radius: 5px;
     cursor: pointer;
 }
+
+.cards {
+    display: flex;
+    justify-content: space-around;
+    margin: 30px 20px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    width: 22%;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.card p {
+    font-size: 92px;
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+
 
 /* Hero Section */
 
